@@ -191,7 +191,7 @@
       'https://script.google.com/macros/s/AKfycbzUOYVyFkIGrR4dGN9tiG5Vh6pGqddHd2UZxgCZGgYsCJl-G0IzqA70rhs2AOVvjiyYBg/exec',  // 主帳號 API
         // 備用帳號 A API（若無，可先只留一個網址）
     ]; 
-
+    const UPLOAD_COOLDOWN_MS = 200;
     // 隨機抽選一條通道發送請求，分散流量
     function getRandomApiUrl() {
       const randomIndex = Math.floor(Math.random() * GAS_API_URLS.length);
@@ -324,7 +324,7 @@
             uploadedCount++;
             const newPercent = (uploadedCount / totalFiles) * 100;
             updateProgressUI(newPercent, `✅ ${file.name} 傳送成功！\n冷卻中...`, 'var(--primary-color)');
-            setTimeout(processUploadQueue, 2000); // 檔案變小了，冷卻時間可以縮短到 2 秒
+            setTimeout(processUploadQueue, UPLOAD_COOLDOWN_MS); // 檔案變小了，冷卻時間可以縮短到 2 秒
           } else {
             updateProgressUI(currentPercent, `⚠️ 伺服器忙碌，重試中...`, '#ef4444');
             uploadQueue.unshift(file);
