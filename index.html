@@ -7,8 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
   
-  <style>
+<style>
     :root {
       --primary-color: #deff9a;
       --primary-hover: #c2e67b;
@@ -63,7 +64,6 @@
       z-index: 10;
       transition: transform 0.3s ease;
     }
-    .glass-card:hover { transform: translateY(-5px); }
 
     h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
     p.subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.5; }
@@ -158,8 +158,8 @@
   <div class="bg-orb orb-2"></div>
 
   <div class="glass-card">
-    <h2>✨ 精彩瞬間 即時共享</h2>
-    <p class="subtitle">支援多檔案自動排隊上傳。<br>下方相框支援【手動點擊按鈕】或【手機左右滑動】切換！</p>
+    <h2>✨ 精彩瞬間 高速共享</h2>
+    <p class="subtitle">~~<br>下方相框支援手動點擊或手機左右滑動切換。</p>
     
     <label class="upload-btn">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
@@ -184,10 +184,19 @@
       <span>正在連線至雲端硬碟載入影像...</span>
     </div>
   </div>
-
+  
   <script>
-    // ⚠️ 請在此處貼上您重新部署後取得的 Google Apps Script 網頁應用程式 URL
-    const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbzUOYVyFkIGrR4dGN9tiG5Vh6pGqddHd2UZxgCZGgYsCJl-G0IzqA70rhs2AOVvjiyYBg/exec'; 
+    // ⚠️ 多帳號分流設定：請在此放入您不同 Google 帳號部署出來的 Web App 網址
+    const GAS_API_URLS = [
+      'https://script.google.com/macros/s/AKfycbzUOYVyFkIGrR4dGN9tiG5Vh6pGqddHd2UZxgCZGgYsCJl-G0IzqA70rhs2AOVvjiyYBg/exec',  // 主帳號 API
+        // 備用帳號 A API（若無，可先只留一個網址）
+    ]; 
+
+    // 隨機抽選一條通道發送請求，分散流量
+    function getRandomApiUrl() {
+      const randomIndex = Math.floor(Math.random() * GAS_API_URLS.length);
+      return GAS_API_URLS[randomIndex];
+    }
 
     let uploadQueue = [];
     let totalFiles = 0;
@@ -228,7 +237,58 @@
       }
     }
 
-    // 使用標準 fetch 實作多檔案排隊上傳
+    // 🌟 核心升級：前端智慧壓縮功能 (HTML5 Canvas)
+    function processImageAndGetBase64(file) {
+      return new Promise((resolve, reject) => {
+        // 如果是影片，無法用 Canvas 壓縮，直接走常規讀取
+        if (!file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = (e) => resolve(e.target.result);
+          reader.onerror = (err) => reject(err);
+          reader.readAsDataURL(file);
+          return;
+        }
+
+        // 如果是圖片，啟動壓縮
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+            const MAX_SIDE = 2560; // 2K+ 級別超高解析度，確保大螢幕細緻度
+
+            // 計算縮放比例
+            if (width > height) {
+              if (width > MAX_SIDE) {
+                height *= MAX_SIDE / width;
+                width = MAX_SIDE;
+              }
+            } else {
+              if (height > MAX_SIDE) {
+                width *= MAX_SIDE / height;
+                height = MAX_SIDE;
+              }
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            // 輸出為 JPEG 格式，畫質設為 0.85 (體積暴減 80% 以上，畫質肉眼難辨)
+            const compressedBase64 = canvas.toDataURL('image/jpeg', 0.85);
+            resolve(compressedBase64);
+          };
+          img.onerror = (err) => reject(err);
+          img.src = e.target.result;
+        };
+        reader.onerror = (err) => reject(err);
+        reader.readAsDataURL(file);
+      });
+    }
+
     function processUploadQueue() {
       if (uploadQueue.length === 0) {
         updateProgressUI(100, `🎉 完美！${totalFiles} 個檔案已全數上傳完畢。`, '#10b981');
@@ -241,23 +301,20 @@
       const file = uploadQueue.shift(); 
       const currentPercent = (uploadedCount / totalFiles) * 100;
       
-      updateProgressUI(currentPercent, `⏳ 正在傳輸 (${uploadedCount + 1}/${totalFiles}):\n${file.name}`, '#38bdf8');
+      updateProgressUI(currentPercent, `⏳ 正在優化並傳輸 (${uploadedCount + 1}/${totalFiles}):\n${file.name}`, '#38bdf8');
 
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const base64Data = event.target.result;
-        
-        // 發送給 GAS doPost 的資料包
+      // 呼叫智慧壓縮
+      processImageAndGetBase64(file).then(base64Data => {
         const payload = {
           action: 'upload',
           base64Data: base64Data,
-          fileName: file.name,
-          mimeType: file.type
+          fileName: file.type.startsWith('image/') ? file.name.replace(/\.[^/.]+$/, "") + ".jpg" : file.name, // 圖片統一轉 jpg
+          mimeType: file.type.startsWith('image/') ? 'image/jpeg' : file.type
         };
 
-        // 核心改變：使用 fetch 代替 google.script.run
-        // ⚠️ 注意：不設 Content-Type 標頭以避開 CORS OPTIONS 預檢限制
-        fetch(GAS_API_URL, {
+        const targetApiUrl = getRandomApiUrl();
+
+        fetch(targetApiUrl, {
           method: 'POST',
           body: JSON.stringify(payload)
         })
@@ -267,23 +324,25 @@
             uploadedCount++;
             const newPercent = (uploadedCount / totalFiles) * 100;
             updateProgressUI(newPercent, `✅ ${file.name} 傳送成功！\n冷卻中...`, 'var(--primary-color)');
-            setTimeout(processUploadQueue, 3000); 
+            setTimeout(processUploadQueue, 2000); // 檔案變小了，冷卻時間可以縮短到 2 秒
           } else {
-            updateProgressUI(currentPercent, `⚠️ 伺服器忙碌 (${res.error})，重試中...`, '#ef4444');
+            updateProgressUI(currentPercent, `⚠️ 伺服器忙碌，重試中...`, '#ef4444');
             uploadQueue.unshift(file);
-            setTimeout(processUploadQueue, 5000); 
+            setTimeout(processUploadQueue, 4000); 
           }
         })
         .catch(err => {
-          updateProgressUI(currentPercent, `⚠️ 網路中斷或伺服器超載，重試中...`, '#ef4444');
+          updateProgressUI(currentPercent, `⚠️ 網路重試中...`, '#ef4444');
           uploadQueue.unshift(file);
-          setTimeout(processUploadQueue, 5000);
+          setTimeout(processUploadQueue, 4000);
         });
-      };
-      reader.readAsDataURL(file);
+      }).catch(err => {
+        updateProgressUI(currentPercent, `❌ 檔案讀取失敗，跳過此檔案`, '#ef4444');
+        setTimeout(processUploadQueue, 2000);
+      });
     }
 
-    // --- 輪播與手動切換邏輯 (改用 fetch 串接) ---
+    // --- 輪播與手動切換邏輯 ---
     let mediaFiles = [];
     let currentIndex = 0;
     let slideInterval;
@@ -293,8 +352,9 @@
 
     function fetchMedia() {
       const payload = { action: 'fetch' };
+      const targetApiUrl = getRandomApiUrl();
 
-      fetch(GAS_API_URL, {
+      fetch(targetApiUrl, {
         method: 'POST',
         body: JSON.stringify(payload)
       })
@@ -307,9 +367,7 @@
           document.getElementById('noMediaHint').innerHTML = '<span>尚無影像，快來上傳第一張照片吧！</span>';
         }
       })
-      .catch(err => {
-        console.error("無法載入雲端硬碟檔案列表:", err);
-      });
+      .catch(err => { console.error("清單獲取失敗:", err); });
     }
 
     function renderSlider() {
@@ -358,46 +416,32 @@
       if (items.length === 0) return;
 
       items[currentIndex].classList.remove('active');
-      if (items[currentIndex].tagName === 'VIDEO') {
-        items[currentIndex].pause();
-      }
+      if (items[currentIndex].tagName === 'VIDEO') items[currentIndex].pause();
 
       currentIndex = nextIndex;
       items[currentIndex].classList.add('active');
-      if (items[currentIndex].tagName === 'VIDEO') {
-        items[currentIndex].play();
-      }
+      if (items[currentIndex].tagName === 'VIDEO') items[currentIndex].play();
       resetTimer();
     }
 
     function nextSlide() {
       if(mediaFiles.length === 0) return;
-      let nextIndex = (currentIndex + 1) % mediaFiles.length;
-      changeSlide(nextIndex);
+      changeSlide((currentIndex + 1) % mediaFiles.length);
     }
 
     function prevSlide() {
       if(mediaFiles.length === 0) return;
-      let nextIndex = (currentIndex - 1 + mediaFiles.length) % mediaFiles.length;
-      changeSlide(nextIndex);
+      changeSlide((currentIndex - 1 + mediaFiles.length) % mediaFiles.length);
     }
 
     function resetTimer() {
       clearInterval(slideInterval);
-      if (mediaFiles.length > 1) {
-        slideInterval = setInterval(nextSlide, SLIDE_DURATION);
-      }
+      if (mediaFiles.length > 1) slideInterval = setInterval(nextSlide, SLIDE_DURATION);
     }
 
     const sliderContainer = document.getElementById('slider');
-    sliderContainer.addEventListener('touchstart', function(e) {
-      touchStartX = e.changedTouches[0].screenX;
-    }, false);
-
-    sliderContainer.addEventListener('touchend', function(e) {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, false);
+    sliderContainer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, false);
+    sliderContainer.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, false);
 
     function handleSwipe() {
       const swipeThreshold = 50;
@@ -405,7 +449,6 @@
       if (touchEndX - touchStartX > swipeThreshold) prevSlide();
     }
 
-    // 啟動系統
     fetchMedia();
     setInterval(fetchMedia, 15000); 
   </script>
