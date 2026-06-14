@@ -197,10 +197,17 @@
       const randomIndex = Math.floor(Math.random() * GAS_API_URLS.length);
       return GAS_API_URLS[randomIndex];
     }
+function getRandomApiUrl() {
+      const randomIndex = Math.floor(Math.random() * GAS_API_URLS.length);
+      return GAS_API_URLS[randomIndex];
+    }
 
+    // --- 4 檔案平行上傳核心邏輯 ---
     let uploadQueue = [];
     let totalFiles = 0;
     let uploadedCount = 0;
+    let activeUploads = 0;          // 記錄目前正在畫面上傳的連線數
+    const MAX_CONCURRENT = 4;       // ⚡ 設定最大同時平行上傳數為 4
 
     const fileInput = document.getElementById('fileInput');
     const statusContainer = document.getElementById('statusContainer');
@@ -211,13 +218,36 @@
       const files = e.target.files;
       if (files.length === 0) return;
 
+      // 阻擋限制設定
+      const MAX_IMAGE_SIZE = 20 * 1024 * 1024; 
+      const MAX_VIDEO_SIZE = 25 * 1024 * 1024; 
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (file.type.startsWith('video/') && file.size > MAX_VIDEO_SIZE) {
+          alert(`❌ 影片 [${file.name}] 檔案太大(超過 25MB)，請改傳較短的影片。`);
+          fileInput.value = '';
+          return;
+        }
+        if (file.type.startsWith('image/') && file.size > MAX_IMAGE_SIZE) {
+          alert(`❌ 照片 [${file.name}] 原始檔案太大，系統無法處理。`);
+          fileInput.value = '';
+          return;
+        }
+      }
+
       totalFiles = files.length;
       uploadedCount = 0;
+      activeUploads = 0;
       uploadQueue = Array.from(files);
       
       statusContainer.style.display = 'block';
-      updateProgressUI(0, '佇列準備中...');
-      processUploadQueue();
+      updateProgressUI(0, '初始化多線傳輸佇列...');
+      
+      // ⚡ 同時啟動最多 4 個上傳執行緒
+      for (let i = 0; i < Math.min(MAX_CONCURRENT, uploadQueue.length); i++) {
+        startNextUploadWorker();
+      }
     });
 
     function updateProgressUI(percent, message, color = '#f8fafc') {
@@ -237,10 +267,9 @@
       }
     }
 
-    // 🌟 核心升級：前端智慧壓縮功能 (HTML5 Canvas)
+    // Canvas 智慧壓縮
     function processImageAndGetBase64(file) {
       return new Promise((resolve, reject) => {
-        // 如果是影片，無法用 Canvas 壓縮，直接走常規讀取
         if (!file.type.startsWith('image/')) {
           const reader = new FileReader();
           reader.onload = (e) => resolve(e.target.result);
@@ -249,7 +278,6 @@
           return;
         }
 
-        // 如果是圖片，啟動壓縮
         const reader = new FileReader();
         reader.onload = function(e) {
           const img = new Image();
@@ -257,29 +285,18 @@
             const canvas = document.createElement('canvas');
             let width = img.width;
             let height = img.height;
-            const MAX_SIDE = 2560; // 2K+ 級別超高解析度，確保大螢幕細緻度
+            const MAX_SIDE = 2560; 
 
-            // 計算縮放比例
             if (width > height) {
-              if (width > MAX_SIDE) {
-                height *= MAX_SIDE / width;
-                width = MAX_SIDE;
-              }
+              if (width > MAX_SIDE) { height *= MAX_SIDE / width; width = MAX_SIDE; }
             } else {
-              if (height > MAX_SIDE) {
-                width *= MAX_SIDE / height;
-                height = MAX_SIDE;
-              }
+              if (height > MAX_SIDE) { width *= MAX_SIDE / height; height = MAX_SIDE; }
             }
 
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = width; canvas.height = height;
             const ctx = canvas.getContext('2d');
             ctx.drawImage(img, 0, 0, width, height);
-
-            // 輸出為 JPEG 格式，畫質設為 0.85 (體積暴減 80% 以上，畫質肉眼難辨)
-            const compressedBase64 = canvas.toDataURL('image/jpeg', 0.85);
-            resolve(compressedBase64);
+            resolve(canvas.toDataURL('image/jpeg', 0.85));
           };
           img.onerror = (err) => reject(err);
           img.src = e.target.result;
@@ -289,29 +306,39 @@
       });
     }
 
-    function processUploadQueue() {
+    // 動態獨立工人執行緒
+    function startNextUploadWorker() {
+      // 佇列空了
       if (uploadQueue.length === 0) {
-        updateProgressUI(100, `🎉 完美！${totalFiles} 個檔案已全數上傳完畢。`, '#10b981');
-        fetchMedia(); 
-        fileInput.value = ''; 
-        setTimeout(() => { statusContainer.style.display = 'none'; }, 5000);
+        // 如果當前沒有任何人在傳輸了，代表全數真正完工
+        if (activeUploads === 0) {
+          updateProgressUI(100, `🎉 完美！${totalFiles} 個檔案已同時傳送完畢。`, '#10b981');
+          fetchMedia(); 
+          fileInput.value = ''; 
+          setTimeout(() => { statusContainer.style.display = 'none'; }, 5000);
+        }
         return;
       }
 
-      const file = uploadQueue.shift(); 
-      const currentPercent = (uploadedCount / totalFiles) * 100;
-      
-      updateProgressUI(currentPercent, `⏳ 正在優化並傳輸 (${uploadedCount + 1}/${totalFiles}):\n${file.name}`, '#38bdf8');
+      // 超過並發上限則不動作
+      if (activeUploads >= MAX_CONCURRENT) return;
 
-      // 呼叫智慧壓縮
+      // 取出一個檔案，活化一個連線數
+      const file = uploadQueue.shift(); 
+      activeUploads++;
+
+      const currentPercent = (uploadedCount / totalFiles) * 100;
+      updateProgressUI(currentPercent, `⚡ 正在多線併發傳輸中... (${uploadedCount}/${totalFiles})`, '#38bdf8');
+
       processImageAndGetBase64(file).then(base64Data => {
         const payload = {
           action: 'upload',
           base64Data: base64Data,
-          fileName: file.type.startsWith('image/') ? file.name.replace(/\.[^/.]+$/, "") + ".jpg" : file.name, // 圖片統一轉 jpg
+          fileName: file.type.startsWith('image/') ? file.name.replace(/\.[^/.]+$/, "") + ".jpg" : file.name,
           mimeType: file.type.startsWith('image/') ? 'image/jpeg' : file.type
         };
 
+        // 隨機抽一個後端傳送
         const targetApiUrl = getRandomApiUrl();
 
         fetch(targetApiUrl, {
@@ -320,29 +347,29 @@
         })
         .then(response => response.json())
         .then(res => {
+          activeUploads--; // 釋放併發名額
+          
           if(res.success) {
             uploadedCount++;
-            const newPercent = (uploadedCount / totalFiles) * 100;
-            updateProgressUI(newPercent, `✅ ${file.name} 傳送成功！\n冷卻中...`, 'var(--primary-color)');
-            setTimeout(processUploadQueue, UPLOAD_COOLDOWN_MS); // 檔案變小了，冷卻時間可以縮短到 2 秒
+            // 完工後，該工人立刻無縫接軌抓下一個檔案
+            startNextUploadWorker(); 
           } else {
-            updateProgressUI(currentPercent, `⚠️ 伺服器忙碌，重試中...`, '#ef4444');
+            // 失敗則丟回排隊最前端，延遲重試
             uploadQueue.unshift(file);
-            setTimeout(processUploadQueue, 4000); 
+            setTimeout(startNextUploadWorker, 3000); 
           }
         })
         .catch(err => {
-          updateProgressUI(currentPercent, `⚠️ 網路重試中...`, '#ef4444');
+          activeUploads--;
           uploadQueue.unshift(file);
-          setTimeout(processUploadQueue, 4000);
+          setTimeout(startNextUploadWorker, 3000);
         });
       }).catch(err => {
-        updateProgressUI(currentPercent, `❌ 檔案讀取失敗，跳過此檔案`, '#ef4444');
-        setTimeout(processUploadQueue, 2000);
+        activeUploads--;
+        uploadedCount++; // 壞檔跳過
+        startNextUploadWorker();
       });
-    }
-
-    // --- 輪播與手動切換邏輯 ---
+    }    // --- 輪播與手動切換邏輯 ---
     let mediaFiles = [];
     let currentIndex = 0;
     let slideInterval;
