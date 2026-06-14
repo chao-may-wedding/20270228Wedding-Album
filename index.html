@@ -1,456 +1,413 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #a20010; -webkit-text-stroke: #a20010}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #1443ae; -webkit-text-stroke: #1443ae}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #12737e; -webkit-text-stroke: #12737e}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #2e3133; -webkit-text-stroke: #2e3133}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #2e3133; -webkit-text-stroke: #2e3133; min-height: 15.0px}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #6103ad; -webkit-text-stroke: #6103ad}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #137646; -webkit-text-stroke: #137646}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #2e3133; -webkit-text-stroke: #000000}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #2e3133; -webkit-text-stroke: #a20010}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #ba0673; -webkit-text-stroke: #ba0673}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #2e3133; -webkit-text-stroke: #ba0673}
-    span.s1 {font-kerning: none; background-color: #f6f7f9}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #f6f7f9; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #f6f7f9; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #1443ae; background-color: #f6f7f9; -webkit-text-stroke: 0px #1443ae}
-    span.s5 {font-kerning: none; color: #2e3133; background-color: #f6f7f9; -webkit-text-stroke: 0px #2e3133}
-    span.s6 {font-kerning: none; color: #12737e; background-color: #f6f7f9; -webkit-text-stroke: 0px #12737e}
-    span.s7 {font-kerning: none; color: #a20010; background-color: #f6f7f9; -webkit-text-stroke: 0px #a20010}
-    span.s8 {font-kerning: none; color: #6103ad; background-color: #f6f7f9; -webkit-text-stroke: 0px #6103ad}
-    span.s9 {font-kerning: none; color: #093c94; background-color: #f6f7f9; -webkit-text-stroke: 0px #093c94}
-    span.s10 {font-kerning: none; color: #137646; background-color: #f6f7f9; -webkit-text-stroke: 0px #137646}
-    span.s11 {font-kerning: none}
-    span.s12 {font-kerning: none; color: #ba0673; background-color: #f6f7f9; -webkit-text-stroke: 0px #ba0673}
-    span.s13 {font-kerning: none; background-color: #f6f7f9; -webkit-text-stroke: 0px #000000}
-    span.s14 {font-kerning: none; background-color: #f6f7f9; -webkit-text-stroke: 0px #2e3133}
-    span.s15 {font-kerning: none; color: #a20010; background-color: #f6f7f9}
-    span.s16 {font-kerning: none; color: #ba0673; background-color: #f6f7f9}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雲端影音互動中心</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #deff9a;
+      --primary-hover: #c2e67b;
+      --bg-color: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.6);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      opacity: 0.5;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+    .orb-1 { width: 300px; height: 300px; background: #deff9a; top: -100px; left: -100px; }
+    .orb-2 { width: 400px; height: 400px; background: #38bdf8; bottom: -150px; right: -100px; animation-delay: -5s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 50px) scale(1.1); }
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      margin: 30px 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover { transform: translateY(-5px); }
+
+    h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+    p.subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.5; }
+
+    .upload-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      color: #0f172a;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(222, 255, 154, 0.3);
+    }
+    .upload-btn:hover { box-shadow: 0 6px 20px rgba(222, 255, 154, 0.5); transform: scale(1.02); }
+    #fileInput { display: none; }
+
+    .status-container { margin-top: 20px; display: none; }
+    #status-text { font-size: 14px; font-weight: 500; margin-bottom: 10px; white-space: pre-line; }
+    .progress-track { width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; }
+    .progress-bar { height: 100%; width: 0%; background: var(--primary-color); border-radius: 10px; transition: width 0.4s ease; box-shadow: 0 0 10px var(--primary-color); }
+
+    .slider-section {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 20px 30px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 450px;
+      touch-action: pan-y;
+    }
+
+    .slide-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      object-fit: contain;
+      transform: scale(1.03);
+      pointer-events: none;
+    }
+    .slide-item.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: all 0.3s ease;
+      opacity: 0.7;
+      user-select: none;
+    }
+    .nav-btn:hover { background: rgba(15, 23, 42, 0.8); border-color: var(--primary-color); color: var(--primary-color); opacity: 1; transform: translateY(-50%) scale(1.1); }
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+    .nav-btn.hidden { display: none !important; }
+
+    .no-media { color: var(--text-muted); font-size: 18px; display: flex; flex-direction: column; align-items: center; gap: 15px; z-index: 5; }
+    .spinner { width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s5"> </span><span class="s6">lang</span><span class="s3">=</span><span class="s1">"zh-Hant"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s7">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s6">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s6">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">雲端影音互動中心</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s5"> </span><span class="s6">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s5"> </span><span class="s6">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s5"> </span><span class="s6">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s5"> </span><span class="s6">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s5"> </span><span class="s6">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s5"> </span><span class="s6">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap"</span><span class="s5"> </span><span class="s6">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">:root</span><span class="s1"> {</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">--primary-color:</span><span class="s5"> </span><span class="s9">#deff9a</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">--primary-hover:</span><span class="s5"> </span><span class="s9">#c2e67b</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">--bg-color:</span><span class="s5"> </span><span class="s9">#0f172a</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">--card-bg:</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">30</span><span class="s1">, </span><span class="s10">41</span><span class="s1">, </span><span class="s10">59</span><span class="s1">, </span><span class="s10">0.6</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">--text-main:</span><span class="s5"> </span><span class="s9">#f8fafc</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">--text-muted:</span><span class="s5"> </span><span class="s9">#94a3b8</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">*</span><span class="s5"> { </span><span class="s1">box-sizing:</span><span class="s5"> </span><span class="s7">border-box</span><span class="s5">; </span><span class="s1">margin:</span><span class="s5"> </span><span class="s10">0</span><span class="s5">; </span><span class="s1">padding:</span><span class="s5"> </span><span class="s10">0</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">body</span><span class="s1"> {</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">font-family:</span><span class="s5"> </span><span class="s1">'Noto Sans TC'</span><span class="s5">, </span><span class="s1">sans-serif</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s5"> </span><span class="s7">var(--bg-color)</span><span class="s5">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">color:</span><span class="s5"> </span><span class="s1">var(--text-main)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">display:</span><span class="s1"> </span><span class="s7">flex</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">flex-direction:</span><span class="s5"> </span><span class="s7">column</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">min-height:</span><span class="s5"> </span><span class="s10">100vh</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">overflow-x:</span><span class="s5"> </span><span class="s7">hidden</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s5"> </span><span class="s7">relative</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.bg-orb</span><span class="s5"> {</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s5"> </span><span class="s7">absolute</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">50%</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">filter:</span><span class="s1"> </span><span class="s7">blur(</span><span class="s10">80px</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">z-index:</span><span class="s1"> </span><span class="s10">-1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">opacity:</span><span class="s1"> </span><span class="s10">0.5</span><span class="s1">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">animation:</span><span class="s5"> </span><span class="s1">float</span><span class="s5"> </span><span class="s10">10s</span><span class="s5"> </span><span class="s1">infinite</span><span class="s5"> </span><span class="s1">ease-in-out</span><span class="s5"> </span><span class="s1">alternate</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.orb-1</span><span class="s5"> { </span><span class="s1">width:</span><span class="s5"> </span><span class="s10">300px</span><span class="s5">; </span><span class="s1">height:</span><span class="s5"> </span><span class="s10">300px</span><span class="s5">; </span><span class="s1">background:</span><span class="s5"> </span><span class="s9">#deff9a</span><span class="s5">; </span><span class="s1">top:</span><span class="s5"> </span><span class="s10">-100px</span><span class="s5">; </span><span class="s1">left:</span><span class="s5"> </span><span class="s10">-100px</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.orb-2</span><span class="s5"> { </span><span class="s1">width:</span><span class="s5"> </span><span class="s10">400px</span><span class="s5">; </span><span class="s1">height:</span><span class="s5"> </span><span class="s10">400px</span><span class="s5">; </span><span class="s1">background:</span><span class="s5"> </span><span class="s9">#38bdf8</span><span class="s5">; </span><span class="s1">bottom:</span><span class="s5"> </span><span class="s10">-150px</span><span class="s5">; </span><span class="s1">right:</span><span class="s5"> </span><span class="s10">-100px</span><span class="s5">; </span><span class="s1">animation-delay:</span><span class="s5"> </span><span class="s10">-5s</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">@keyframes</span><span class="s5"> </span><span class="s7">float</span><span class="s5"> {</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s10">0%</span><span class="s5"> { </span><span class="s6">transform:</span><span class="s5"> </span><span class="s1">translate(</span><span class="s10">0</span><span class="s5">, </span><span class="s10">0</span><span class="s1">)</span><span class="s5"> </span><span class="s1">scale(</span><span class="s10">1</span><span class="s1">)</span><span class="s5">; }</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s10">100%</span><span class="s5"> { </span><span class="s6">transform:</span><span class="s5"> </span><span class="s1">translate(</span><span class="s10">30px</span><span class="s5">, </span><span class="s10">50px</span><span class="s1">)</span><span class="s5"> </span><span class="s1">scale(</span><span class="s10">1.1</span><span class="s1">)</span><span class="s5">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.glass-card</span><span class="s5"> {</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">background:</span><span class="s5"> </span><span class="s1">var(--card-bg)</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">12px</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">-webkit-backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">12px</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">border:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s7">solid</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.1</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">24px</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">padding:</span><span class="s1"> </span><span class="s10">30px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">width:</span><span class="s1"> </span><span class="s10">90%</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">max-width:</span><span class="s5"> </span><span class="s10">500px</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">text-align:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">margin:</span><span class="s1"> </span><span class="s10">30px</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">20px</span><span class="s1"> </span><span class="s10">40px</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.3</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">z-index:</span><span class="s1"> </span><span class="s10">10</span><span class="s1">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">transition:</span><span class="s5"> </span><span class="s1">transform</span><span class="s5"> </span><span class="s10">0.3s</span><span class="s5"> </span><span class="s1">ease</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.glass-card:hover</span><span class="s5"> { </span><span class="s6">transform:</span><span class="s5"> </span><span class="s7">translateY(</span><span class="s10">-5px</span><span class="s7">)</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">h2</span><span class="s5"> { </span><span class="s1">font-size:</span><span class="s5"> </span><span class="s10">24px</span><span class="s5">; </span><span class="s1">font-weight:</span><span class="s5"> </span><span class="s10">700</span><span class="s5">; </span><span class="s1">margin-bottom:</span><span class="s5"> </span><span class="s10">10px</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">p.subtitle</span><span class="s5"> { </span><span class="s1">font-size:</span><span class="s5"> </span><span class="s10">14px</span><span class="s5">; </span><span class="s1">color:</span><span class="s5"> </span><span class="s7">var(--text-muted)</span><span class="s5">; </span><span class="s1">margin-bottom:</span><span class="s5"> </span><span class="s10">25px</span><span class="s5">; </span><span class="s1">line-height:</span><span class="s5"> </span><span class="s10">1.5</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.upload-btn</span><span class="s5"> {</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">display:</span><span class="s5"> </span><span class="s1">inline-flex</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">gap:</span><span class="s1"> </span><span class="s10">10px</span><span class="s1">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">background:</span><span class="s5"> </span><span class="s1">linear-gradient(</span><span class="s10">135deg</span><span class="s5">, </span><span class="s1">var(--primary-color)</span><span class="s5">, </span><span class="s1">var(--primary-hover))</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">color:</span><span class="s1"> </span><span class="s9">#0f172a</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">padding:</span><span class="s1"> </span><span class="s10">14px</span><span class="s1"> </span><span class="s10">28px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">font-size:</span><span class="s5"> </span><span class="s10">16px</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">font-weight:</span><span class="s5"> </span><span class="s10">700</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">30px</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">cursor:</span><span class="s1"> </span><span class="s7">pointer</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">transition:</span><span class="s5"> </span><span class="s7">all</span><span class="s5"> </span><span class="s10">0.3s</span><span class="s5"> </span><span class="s7">ease</span><span class="s5">;</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">box-shadow:</span><span class="s5"> </span><span class="s1">0</span><span class="s5"> </span><span class="s1">4px</span><span class="s5"> </span><span class="s1">15px</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s1">222</span><span class="s5">, </span><span class="s1">255</span><span class="s5">, </span><span class="s1">154</span><span class="s5">, </span><span class="s1">0.3</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.upload-btn:hover</span><span class="s5"> { </span><span class="s6">box-shadow:</span><span class="s5"> </span><span class="s1">0</span><span class="s5"> </span><span class="s1">6px</span><span class="s5"> </span><span class="s1">20px</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s1">222</span><span class="s5">, </span><span class="s1">255</span><span class="s5">, </span><span class="s1">154</span><span class="s5">, </span><span class="s1">0.5</span><span class="s7">)</span><span class="s5">; </span><span class="s6">transform:</span><span class="s5"> </span><span class="s7">scale(</span><span class="s1">1.02</span><span class="s7">)</span><span class="s5">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">#fileInput</span><span class="s1"> { </span><span class="s6">display:</span><span class="s1"> </span><span class="s7">none</span><span class="s1">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.status-container</span><span class="s5"> { </span><span class="s1">margin-top:</span><span class="s5"> </span><span class="s10">20px</span><span class="s5">; </span><span class="s1">display:</span><span class="s5"> </span><span class="s7">none</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">#status-text</span><span class="s5"> { </span><span class="s1">font-size:</span><span class="s5"> </span><span class="s10">14px</span><span class="s5">; </span><span class="s1">font-weight:</span><span class="s5"> </span><span class="s10">500</span><span class="s5">; </span><span class="s1">margin-bottom:</span><span class="s5"> </span><span class="s10">10px</span><span class="s5">; </span><span class="s1">white-space:</span><span class="s5"> </span><span class="s7">pre-line</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.progress-track</span><span class="s5"> { </span><span class="s1">width:</span><span class="s5"> </span><span class="s10">100%</span><span class="s5">; </span><span class="s1">height:</span><span class="s5"> </span><span class="s10">8px</span><span class="s5">; </span><span class="s1">background:</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s5">, </span><span class="s10">255</span><span class="s5">, </span><span class="s10">255</span><span class="s5">, </span><span class="s10">0.1</span><span class="s7">)</span><span class="s5">; </span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">10px</span><span class="s5">; </span><span class="s1">overflow:</span><span class="s5"> </span><span class="s7">hidden</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.progress-bar</span><span class="s5"> { </span><span class="s1">height:</span><span class="s5"> </span><span class="s10">100%</span><span class="s5">; </span><span class="s1">width:</span><span class="s5"> </span><span class="s10">0%</span><span class="s5">; </span><span class="s1">background:</span><span class="s5"> </span><span class="s7">var(--primary-color)</span><span class="s5">; </span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">10px</span><span class="s5">; </span><span class="s1">transition:</span><span class="s5"> </span><span class="s7">width</span><span class="s5"> </span><span class="s10">0.4s</span><span class="s5"> </span><span class="s7">ease</span><span class="s5">; </span><span class="s1">box-shadow:</span><span class="s5"> </span><span class="s10">0</span><span class="s5"> </span><span class="s10">0</span><span class="s5"> </span><span class="s10">10px</span><span class="s5"> </span><span class="s7">var(--primary-color)</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.slider-section</span><span class="s5"> {</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">flex-grow:</span><span class="s5"> </span><span class="s10">1</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">max-width:</span><span class="s5"> </span><span class="s10">1200px</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">margin:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">20px</span><span class="s1"> </span><span class="s10">30px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s5"> </span><span class="s7">relative</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">overflow:</span><span class="s5"> </span><span class="s7">hidden</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">20px</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">background:</span><span class="s5"> </span><span class="s9">#000</span><span class="s5">;</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">box-shadow:</span><span class="s5"> </span><span class="s1">0</span><span class="s5"> </span><span class="s1">10px</span><span class="s5"> </span><span class="s1">30px</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s1">0</span><span class="s5">,</span><span class="s1">0</span><span class="s5">,</span><span class="s1">0</span><span class="s5">,</span><span class="s1">0.5</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">border:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s7">solid</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.05</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">display:</span><span class="s1"> </span><span class="s7">flex</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">min-height:</span><span class="s5"> </span><span class="s10">450px</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">touch-action:</span><span class="s5"> </span><span class="s7">pan-y</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.slide-item</span><span class="s5"> {</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s5"> </span><span class="s7">absolute</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">height:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">opacity:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">transition:</span><span class="s5"> </span><span class="s1">opacity</span><span class="s5"> </span><span class="s10">0.8s</span><span class="s5"> </span><span class="s1">cubic-bezier(</span><span class="s10">0.4</span><span class="s5">, </span><span class="s10">0</span><span class="s5">, </span><span class="s10">0.2</span><span class="s5">, </span><span class="s10">1</span><span class="s1">)</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">object-fit:</span><span class="s5"> </span><span class="s7">contain</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">transform:</span><span class="s5"> </span><span class="s7">scale(</span><span class="s10">1.03</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">pointer-events:</span><span class="s5"> </span><span class="s7">none</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.slide-item.active</span><span class="s5"> { </span><span class="s1">opacity:</span><span class="s5"> </span><span class="s10">1</span><span class="s5">; </span><span class="s1">transform:</span><span class="s5"> </span><span class="s7">scale(</span><span class="s10">1</span><span class="s7">)</span><span class="s5">; </span><span class="s1">pointer-events:</span><span class="s5"> </span><span class="s7">auto</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.nav-btn</span><span class="s5"> {</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s5"> </span><span class="s7">absolute</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">top:</span><span class="s1"> </span><span class="s10">50%</span><span class="s1">;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">transform:</span><span class="s5"> </span><span class="s1">translateY(</span><span class="s10">-50%</span><span class="s1">)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">background:</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">15</span><span class="s1">, </span><span class="s10">23</span><span class="s1">, </span><span class="s10">42</span><span class="s1">, </span><span class="s10">0.4</span><span class="s7">)</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">4px</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">-webkit-backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">4px</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s6">border:</span><span class="s5"> </span><span class="s1">1px</span><span class="s5"> </span><span class="s7">solid</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s1">255</span><span class="s5">,</span><span class="s1">255</span><span class="s5">,</span><span class="s1">255</span><span class="s5">,</span><span class="s1">0.1</span><span class="s7">)</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">color:</span><span class="s1"> </span><span class="s7">white</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">width:</span><span class="s1"> </span><span class="s10">50px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">height:</span><span class="s1"> </span><span class="s10">50px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">50%</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">display:</span><span class="s1"> </span><span class="s7">flex</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">cursor:</span><span class="s1"> </span><span class="s7">pointer</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">z-index:</span><span class="s1"> </span><span class="s10">20</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">transition:</span><span class="s5"> </span><span class="s7">all</span><span class="s5"> </span><span class="s10">0.3s</span><span class="s5"> </span><span class="s7">ease</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">opacity:</span><span class="s1"> </span><span class="s10">0.7</span><span class="s1">;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">user-select:</span><span class="s5"> </span><span class="s7">none</span><span class="s5">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.nav-btn:hover</span><span class="s5"> { </span><span class="s6">background:</span><span class="s5"> </span><span class="s1">rgba(</span><span class="s10">15</span><span class="s5">, </span><span class="s10">23</span><span class="s5">, </span><span class="s10">42</span><span class="s5">, </span><span class="s10">0.8</span><span class="s1">)</span><span class="s5">; </span><span class="s6">border-color:</span><span class="s5"> </span><span class="s1">var(--primary-color)</span><span class="s5">; </span><span class="s6">color:</span><span class="s5"> </span><span class="s1">var(--primary-color)</span><span class="s5">; </span><span class="s6">opacity:</span><span class="s5"> </span><span class="s10">1</span><span class="s5">; </span><span class="s6">transform:</span><span class="s5"> </span><span class="s1">translateY(</span><span class="s10">-50%</span><span class="s1">)</span><span class="s5"> </span><span class="s1">scale(</span><span class="s10">1.1</span><span class="s1">)</span><span class="s5">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">.prev-btn</span><span class="s1"> { </span><span class="s6">left:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">.next-btn</span><span class="s1"> { </span><span class="s6">right:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">; }</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.nav-btn.hidden</span><span class="s5"> { </span><span class="s6">display:</span><span class="s5"> </span><span class="s7">none</span><span class="s5"> </span><span class="s4">!important</span><span class="s5">; }</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.no-media</span><span class="s5"> { </span><span class="s1">color:</span><span class="s5"> </span><span class="s7">var(--text-muted)</span><span class="s5">; </span><span class="s1">font-size:</span><span class="s5"> </span><span class="s10">18px</span><span class="s5">; </span><span class="s1">display:</span><span class="s5"> </span><span class="s7">flex</span><span class="s5">; </span><span class="s1">flex-direction:</span><span class="s5"> </span><span class="s7">column</span><span class="s5">; </span><span class="s1">align-items:</span><span class="s5"> </span><span class="s7">center</span><span class="s5">; </span><span class="s1">gap:</span><span class="s5"> </span><span class="s10">15px</span><span class="s5">; </span><span class="s1">z-index:</span><span class="s5"> </span><span class="s10">5</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s8">.spinner</span><span class="s5"> { </span><span class="s1">width:</span><span class="s5"> </span><span class="s10">40px</span><span class="s5">; </span><span class="s1">height:</span><span class="s5"> </span><span class="s10">40px</span><span class="s5">; </span><span class="s1">border:</span><span class="s5"> </span><span class="s10">4px</span><span class="s5"> </span><span class="s7">solid</span><span class="s5"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s5">,</span><span class="s10">255</span><span class="s5">,</span><span class="s10">255</span><span class="s5">,</span><span class="s10">0.1</span><span class="s7">)</span><span class="s5">; </span><span class="s1">border-left-color:</span><span class="s5"> </span><span class="s7">var(--primary-color)</span><span class="s5">; </span><span class="s1">border-radius:</span><span class="s5"> </span><span class="s10">50%</span><span class="s5">; </span><span class="s1">animation:</span><span class="s5"> </span><span class="s7">spin</span><span class="s5"> </span><span class="s10">1s</span><span class="s5"> </span><span class="s7">linear</span><span class="s5"> </span><span class="s7">infinite</span><span class="s5">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">@keyframes</span><span class="s1"> </span><span class="s7">spin</span><span class="s1"> { </span><span class="s10">100%</span><span class="s1"> { </span><span class="s6">transform:</span><span class="s1"> </span><span class="s7">rotate(</span><span class="s10">360deg</span><span class="s7">)</span><span class="s1">; } }</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"bg-orb orb-1"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"bg-orb orb-2"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"glass-card"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">h2</span><span class="s3">&gt;</span><span class="s1">✨ 精彩瞬間 即時共享 (GitHub 版)</span><span class="s3">&lt;/</span><span class="s4">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s1"> </span><span class="s6">class</span><span class="s3">=</span><span class="s7">"subtitle"</span><span class="s3">&gt;</span><span class="s1">支援多檔案自動排隊上傳。</span><span class="s3">&lt;</span><span class="s4">br</span><span class="s3">&gt;</span><span class="s1">下方相框支援【手動點擊按鈕】或【手機左右滑動】切換！</span><span class="s3">&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">label</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"upload-btn"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">svg</span><span class="s5"> </span><span class="s6">width</span><span class="s3">=</span><span class="s1">"24"</span><span class="s5"> </span><span class="s6">height</span><span class="s3">=</span><span class="s1">"24"</span><span class="s5"> </span><span class="s6">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s5"> </span><span class="s6">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s5"> </span><span class="s6">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s5"> </span><span class="s6">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s6">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s6">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s3">&gt;&lt;</span><span class="s4">path</span><span class="s5"> </span><span class="s6">d</span><span class="s3">=</span><span class="s1">"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"</span><span class="s3">&gt;&lt;/</span><span class="s4">path</span><span class="s3">&gt;&lt;</span><span class="s4">polyline</span><span class="s5"> </span><span class="s6">points</span><span class="s3">=</span><span class="s1">"17 8 12 3 7 8"</span><span class="s3">&gt;&lt;/</span><span class="s4">polyline</span><span class="s3">&gt;&lt;</span><span class="s4">line</span><span class="s5"> </span><span class="s6">x1</span><span class="s3">=</span><span class="s1">"12"</span><span class="s5"> </span><span class="s6">y1</span><span class="s3">=</span><span class="s1">"3"</span><span class="s5"> </span><span class="s6">x2</span><span class="s3">=</span><span class="s1">"12"</span><span class="s5"> </span><span class="s6">y2</span><span class="s3">=</span><span class="s1">"15"</span><span class="s3">&gt;&lt;/</span><span class="s4">line</span><span class="s3">&gt;&lt;/</span><span class="s4">svg</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>選擇照片 / 影片</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s6">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"fileInput"</span><span class="s5"> </span><span class="s6">accept</span><span class="s3">=</span><span class="s1">"image/*,video/*"</span><span class="s5"> </span><span class="s6">multiple</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"status-container"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"statusContainer"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s6">id</span><span class="s3">=</span><span class="s7">"status-text"</span><span class="s3">&gt;</span><span class="s1">準備上傳...</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"progress-track"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"progress-bar"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"progressBar"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"slider-section"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"slider"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"nav-btn prev-btn hidden"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"prevBtn"</span><span class="s5"> </span><span class="s6">onclick</span><span class="s3">=</span><span class="s1">"prevSlide()"</span><span class="s3">&gt;</span><span class="s5">❮</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"nav-btn next-btn hidden"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"nextBtn"</span><span class="s5"> </span><span class="s6">onclick</span><span class="s3">=</span><span class="s1">"nextSlide()"</span><span class="s3">&gt;</span><span class="s5">❯</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"no-media"</span><span class="s5"> </span><span class="s6">id</span><span class="s3">=</span><span class="s1">"noMediaHint"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s6">class</span><span class="s3">=</span><span class="s1">"spinner"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;</span><span class="s1">正在連線至雲端硬碟載入影像...</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// ⚠️ 請在此處貼上您重新部署後取得的 Google Apps Script 網頁應用程式 URL</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s5"> </span><span class="s12">GAS_API_URL</span><span class="s5"> = </span><span class="s1">'https://script.google.com/macros/s/AKfycbzUOYVyFkIGrR4dGN9tiG5Vh6pGqddHd2UZxgCZGgYsCJl-G0IzqA70rhs2AOVvjiyYBg/exec'</span><span class="s5">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s1"> </span><span class="s13">uploadQueue</span><span class="s1"> = [];</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">totalFiles</span><span class="s14"> = </span><span class="s6">0</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">uploadedCount</span><span class="s14"> = </span><span class="s6">0</span><span class="s14">;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">fileInput</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'fileInput'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">statusContainer</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'statusContainer'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">statusText</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'status-text'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">progressBar</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'progressBar'</span><span class="s14">);</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">fileInput</span><span class="s14">.</span><span class="s1">addEventListener</span><span class="s14">(</span><span class="s7">'change'</span><span class="s14">, </span><span class="s4">function</span><span class="s14">(</span><span class="s1">e</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">files</span><span class="s14"> = </span><span class="s1">e</span><span class="s14">.</span><span class="s1">target</span><span class="s14">.</span><span class="s1">files</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s13">files</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> === </span><span class="s6">0</span><span class="s1">) </span><span class="s4">return</span><span class="s1">;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">totalFiles</span><span class="s14"> = </span><span class="s1">files</span><span class="s14">.</span><span class="s1">length</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">uploadedCount</span><span class="s14"> = </span><span class="s6">0</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">uploadQueue</span><span class="s14"> = </span><span class="s12">Array</span><span class="s14">.</span><span class="s4">from</span><span class="s14">(</span><span class="s1">files</span><span class="s14">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">statusContainer</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">display</span><span class="s14"> = </span><span class="s7">'block'</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">updateProgressUI</span><span class="s14">(</span><span class="s6">0</span><span class="s14">, </span><span class="s7">'佇列準備中...'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">processUploadQueue</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">updateProgressUI</span><span class="s14">(</span><span class="s1">percent</span><span class="s14">, </span><span class="s1">message</span><span class="s14">, </span><span class="s1">color</span><span class="s14"> = </span><span class="s7">'#f8fafc'</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">width</span><span class="s14"> = </span><span class="s1">percent</span><span class="s14"> + </span><span class="s7">'%'</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">statusText</span><span class="s14">.</span><span class="s1">innerText</span><span class="s14"> = </span><span class="s1">message</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">statusText</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">color</span><span class="s14"> = </span><span class="s1">color</span><span class="s14">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s13">color</span><span class="s1"> === </span><span class="s7">'#ef4444'</span><span class="s1">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">background</span><span class="s14"> = </span><span class="s7">'#ef4444'</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">boxShadow</span><span class="s14"> = </span><span class="s7">'0 0 10px #ef4444'</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (</span><span class="s13">color</span><span class="s1"> === </span><span class="s7">'#10b981'</span><span class="s1"> || </span><span class="s13">percent</span><span class="s1"> === </span><span class="s6">100</span><span class="s1">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">background</span><span class="s14"> = </span><span class="s7">'#10b981'</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">boxShadow</span><span class="s14"> = </span><span class="s7">'0 0 10px #10b981'</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">progressBar</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">background</span><span class="s14"> = </span><span class="s7">'var(--primary-color)'</span><span class="s14">;</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s13">progressBar</span><span class="s14">.</span><span class="s13">style</span><span class="s14">.</span><span class="s13">boxShadow</span><span class="s14"> = </span><span class="s15">'0 0 10px var(--primary-color)'</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 使用標準 fetch 實作多檔案排隊上傳</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">processUploadQueue</span><span class="s14">() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s13">uploadQueue</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> === </span><span class="s6">0</span><span class="s1">) {</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s13">updateProgressUI</span><span class="s14">(</span><span class="s6">100</span><span class="s14">, </span><span class="s15">`🎉 完美！</span><span class="s14">${</span><span class="s13">totalFiles</span><span class="s14">}</span><span class="s15"> 個檔案已全數上傳完畢。`</span><span class="s14">, </span><span class="s15">'#10b981'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">fetchMedia</span><span class="s1">();<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">fileInput</span><span class="s1">.</span><span class="s13">value</span><span class="s1"> = </span><span class="s7">''</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">setTimeout</span><span class="s14">(() =&gt; { </span><span class="s1">statusContainer</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">display</span><span class="s14"> = </span><span class="s7">'none'</span><span class="s14">; }, </span><span class="s6">5000</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">file</span><span class="s14"> = </span><span class="s1">uploadQueue</span><span class="s14">.</span><span class="s1">shift</span><span class="s14">();<span class="Apple-converted-space"> </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">currentPercent</span><span class="s14"> = (</span><span class="s1">uploadedCount</span><span class="s14"> / </span><span class="s1">totalFiles</span><span class="s14">) * </span><span class="s6">100</span><span class="s14">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">updateProgressUI</span><span class="s14">(</span><span class="s1">currentPercent</span><span class="s14">, </span><span class="s7">`⏳ 正在傳輸 (</span><span class="s14">${</span><span class="s1">uploadedCount</span><span class="s14"> + </span><span class="s6">1</span><span class="s14">}</span><span class="s7">/</span><span class="s14">${</span><span class="s1">totalFiles</span><span class="s14">}</span><span class="s7">):\n</span><span class="s14">${</span><span class="s1">file</span><span class="s14">.</span><span class="s1">name</span><span class="s14">}</span><span class="s7">`</span><span class="s14">, </span><span class="s7">'#38bdf8'</span><span class="s14">);</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s1"> </span><span class="s13">reader</span><span class="s1"> = </span><span class="s4">new</span><span class="s1"> </span><span class="s12">FileReader</span><span class="s1">();</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">reader</span><span class="s14">.</span><span class="s1">onload</span><span class="s14"> = </span><span class="s4">function</span><span class="s14">(</span><span class="s1">event</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">base64Data</span><span class="s14"> = </span><span class="s1">event</span><span class="s14">.</span><span class="s1">target</span><span class="s14">.</span><span class="s1">result</span><span class="s14">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// 發送給 GAS doPost 的資料包</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">const</span><span class="s1"> </span><span class="s13">payload</span><span class="s1"> = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s13">action</span><span class="s1">: </span><span class="s7">'upload'</span><span class="s1">,</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">base64Data</span><span class="s14">: </span><span class="s1">base64Data</span><span class="s14">,</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">fileName</span><span class="s14">: </span><span class="s1">file</span><span class="s14">.</span><span class="s1">name</span><span class="s14">,</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">mimeType</span><span class="s14">: </span><span class="s1">file</span><span class="s14">.</span><span class="s1">type</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// 核心改變：使用 fetch 代替 google.script.run</span></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// ⚠️ 注意：不設 Content-Type 標頭以避開 CORS OPTIONS 預檢限制</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">fetch</span><span class="s1">(</span><span class="s12">GAS_API_URL</span><span class="s1">, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s13">method</span><span class="s1">: </span><span class="s7">'POST'</span><span class="s1">,</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">body</span><span class="s14">: </span><span class="s12">JSON</span><span class="s14">.</span><span class="s1">stringify</span><span class="s14">(</span><span class="s1">payload</span><span class="s14">)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>})</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span>.</span><span class="s1">then</span><span class="s14">(</span><span class="s1">response</span><span class="s14"> =&gt; </span><span class="s1">response</span><span class="s14">.</span><span class="s1">json</span><span class="s14">())</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>.</span><span class="s13">then</span><span class="s1">(</span><span class="s13">res</span><span class="s1"> =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">if</span><span class="s1">(</span><span class="s13">res</span><span class="s1">.</span><span class="s13">success</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">uploadedCount</span><span class="s1">++;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">newPercent</span><span class="s14"> = (</span><span class="s1">uploadedCount</span><span class="s14"> / </span><span class="s1">totalFiles</span><span class="s14">) * </span><span class="s6">100</span><span class="s14">;</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s13">updateProgressUI</span><span class="s14">(</span><span class="s13">newPercent</span><span class="s14">, </span><span class="s15">`✅ </span><span class="s14">${</span><span class="s13">file</span><span class="s14">.</span><span class="s13">name</span><span class="s14">}</span><span class="s15"> 傳送成功！\n冷卻中...`</span><span class="s14">, </span><span class="s15">'var(--primary-color)'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">setTimeout</span><span class="s14">(</span><span class="s1">processUploadQueue</span><span class="s14">, </span><span class="s6">3000</span><span class="s14">);<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">updateProgressUI</span><span class="s14">(</span><span class="s1">currentPercent</span><span class="s14">, </span><span class="s7">`⚠️ 伺服器忙碌 (</span><span class="s14">${</span><span class="s1">res</span><span class="s14">.</span><span class="s1">error</span><span class="s14">}</span><span class="s7">)，重試中...`</span><span class="s14">, </span><span class="s7">'#ef4444'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">uploadQueue</span><span class="s14">.</span><span class="s1">unshift</span><span class="s14">(</span><span class="s1">file</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">setTimeout</span><span class="s14">(</span><span class="s1">processUploadQueue</span><span class="s14">, </span><span class="s6">5000</span><span class="s14">);<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>})</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>.</span><span class="s4">catch</span><span class="s1">(</span><span class="s13">err</span><span class="s1"> =&gt; {</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s13">updateProgressUI</span><span class="s14">(</span><span class="s13">currentPercent</span><span class="s14">, </span><span class="s15">`⚠️ 網路中斷或伺服器超載，重試中...`</span><span class="s14">, </span><span class="s15">'#ef4444'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">uploadQueue</span><span class="s14">.</span><span class="s1">unshift</span><span class="s14">(</span><span class="s1">file</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">setTimeout</span><span class="s14">(</span><span class="s1">processUploadQueue</span><span class="s14">, </span><span class="s6">5000</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">reader</span><span class="s14">.</span><span class="s1">readAsDataURL</span><span class="s14">(</span><span class="s1">file</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// --- 輪播與手動切換邏輯 (改用 fetch 串接) ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s1"> </span><span class="s13">mediaFiles</span><span class="s1"> = [];</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">currentIndex</span><span class="s14"> = </span><span class="s6">0</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">slideInterval</span><span class="s14">;</span></p>
-<p class="p12"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s5"> </span><span class="s1">SLIDE_DURATION</span><span class="s5"> = </span><span class="s6">6000</span><span class="s5">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">touchStartX</span><span class="s14"> = </span><span class="s6">0</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">let</span><span class="s1"> </span><span class="s13">touchEndX</span><span class="s1"> = </span><span class="s6">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">fetchMedia</span><span class="s14">() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s1"> </span><span class="s13">payload</span><span class="s1"> = { </span><span class="s13">action</span><span class="s1">: </span><span class="s7">'fetch'</span><span class="s1"> };</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p13"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s13">fetch</span><span class="s14">(</span><span class="s16">GAS_API_URL</span><span class="s14">, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">method</span><span class="s1">: </span><span class="s7">'POST'</span><span class="s1">,</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">body</span><span class="s14">: </span><span class="s12">JSON</span><span class="s14">.</span><span class="s1">stringify</span><span class="s14">(</span><span class="s1">payload</span><span class="s14">)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>})</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span>.</span><span class="s1">then</span><span class="s14">(</span><span class="s1">response</span><span class="s14"> =&gt; </span><span class="s1">response</span><span class="s14">.</span><span class="s1">json</span><span class="s14">())</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>.</span><span class="s13">then</span><span class="s1">(</span><span class="s13">res</span><span class="s1"> =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s13">res</span><span class="s1">.</span><span class="s13">success</span><span class="s1"> &amp;&amp; </span><span class="s13">res</span><span class="s1">.</span><span class="s13">data</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> &gt; </span><span class="s6">0</span><span class="s1">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">mediaFiles</span><span class="s14"> = </span><span class="s1">res</span><span class="s14">.</span><span class="s1">data</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s13">renderSlider</span><span class="s1">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (</span><span class="s13">res</span><span class="s1">.</span><span class="s13">success</span><span class="s1">) {</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s13">document</span><span class="s14">.</span><span class="s13">getElementById</span><span class="s14">(</span><span class="s15">'noMediaHint'</span><span class="s14">).</span><span class="s13">innerHTML</span><span class="s14"> = </span><span class="s15">'&lt;span&gt;尚無影像，快來上傳第一張照片吧！&lt;/span&gt;'</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>})</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>.</span><span class="s4">catch</span><span class="s1">(</span><span class="s13">err</span><span class="s1"> =&gt; {</span></p>
-<p class="p11"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s13">console</span><span class="s14">.</span><span class="s13">error</span><span class="s14">(</span><span class="s15">"無法載入雲端硬碟檔案列表:"</span><span class="s14">, </span><span class="s13">err</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">renderSlider</span><span class="s14">() {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">slider</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'slider'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">hint</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'noMediaHint'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">hint</span><span class="s14">) </span><span class="s1">hint</span><span class="s14">.</span><span class="s1">style</span><span class="s14">.</span><span class="s1">display</span><span class="s14"> = </span><span class="s7">'none'</span><span class="s14">;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">currentItemsCount</span><span class="s14"> = </span><span class="s1">slider</span><span class="s14">.</span><span class="s1">querySelectorAll</span><span class="s14">(</span><span class="s7">'.slide-item'</span><span class="s14">).</span><span class="s1">length</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">currentItemsCount</span><span class="s14"> !== </span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">items</span><span class="s14"> = </span><span class="s1">slider</span><span class="s14">.</span><span class="s1">querySelectorAll</span><span class="s14">(</span><span class="s7">'.slide-item'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">items</span><span class="s14">.</span><span class="s1">forEach</span><span class="s14">(</span><span class="s1">item</span><span class="s14"> =&gt; </span><span class="s1">item</span><span class="s14">.</span><span class="s1">remove</span><span class="s14">());</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">forEach</span><span class="s14">((</span><span class="s1">file</span><span class="s14">, </span><span class="s1">index</span><span class="s14">) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">let</span><span class="s1"> </span><span class="s13">element</span><span class="s1">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">file</span><span class="s14">.</span><span class="s1">mimeType</span><span class="s14">.</span><span class="s1">startsWith</span><span class="s14">(</span><span class="s7">'image/'</span><span class="s14">)) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">element</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">createElement</span><span class="s14">(</span><span class="s7">'img'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">element</span><span class="s1">.</span><span class="s13">src</span><span class="s1"> = </span><span class="s13">file</span><span class="s1">.</span><span class="s13">url</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (</span><span class="s13">file</span><span class="s1">.</span><span class="s13">mimeType</span><span class="s1">.</span><span class="s13">startsWith</span><span class="s1">(</span><span class="s7">'video/'</span><span class="s1">)) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s1">element</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">createElement</span><span class="s14">(</span><span class="s7">'video'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">element</span><span class="s1">.</span><span class="s13">src</span><span class="s1"> = </span><span class="s13">file</span><span class="s1">.</span><span class="s13">url</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">element</span><span class="s1">.</span><span class="s13">controls</span><span class="s1"> = </span><span class="s4">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">element</span><span class="s1">.</span><span class="s13">muted</span><span class="s1"> = </span><span class="s4">true</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">element</span><span class="s1">.</span><span class="s13">loop</span><span class="s1"> = </span><span class="s4">true</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">element</span><span class="s14">.</span><span class="s1">className</span><span class="s14"> = </span><span class="s7">'slide-item'</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">index</span><span class="s14"> === </span><span class="s1">currentIndex</span><span class="s14">) </span><span class="s1">element</span><span class="s14">.</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">add</span><span class="s14">(</span><span class="s7">'active'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">          </span></span><span class="s1">slider</span><span class="s14">.</span><span class="s1">appendChild</span><span class="s14">(</span><span class="s1">element</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">prevBtn</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'prevBtn'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">nextBtn</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'nextBtn'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14"> &gt; </span><span class="s6">1</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">prevBtn</span><span class="s14">.</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">remove</span><span class="s14">(</span><span class="s7">'hidden'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">nextBtn</span><span class="s14">.</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">remove</span><span class="s14">(</span><span class="s7">'hidden'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">resetTimer</span><span class="s1">();<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">prevBtn</span><span class="s14">.</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">add</span><span class="s14">(</span><span class="s7">'hidden'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">nextBtn</span><span class="s14">.</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">add</span><span class="s14">(</span><span class="s7">'hidden'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">changeSlide</span><span class="s14">(</span><span class="s1">nextIndex</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">items</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">querySelectorAll</span><span class="s14">(</span><span class="s7">'.slide-item'</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s13">items</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> === </span><span class="s6">0</span><span class="s1">) </span><span class="s4">return</span><span class="s1">;</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">remove</span><span class="s14">(</span><span class="s7">'active'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">tagName</span><span class="s14"> === </span><span class="s7">'VIDEO'</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">pause</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">currentIndex</span><span class="s14"> = </span><span class="s1">nextIndex</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">classList</span><span class="s14">.</span><span class="s1">add</span><span class="s14">(</span><span class="s7">'active'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">tagName</span><span class="s14"> === </span><span class="s7">'VIDEO'</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">items</span><span class="s14">[</span><span class="s1">currentIndex</span><span class="s14">].</span><span class="s1">play</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">resetTimer</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s1"> </span><span class="s13">nextSlide</span><span class="s1">() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1">(</span><span class="s13">mediaFiles</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> === </span><span class="s6">0</span><span class="s1">) </span><span class="s4">return</span><span class="s1">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">nextIndex</span><span class="s14"> = (</span><span class="s1">currentIndex</span><span class="s14"> + </span><span class="s6">1</span><span class="s14">) % </span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">changeSlide</span><span class="s14">(</span><span class="s1">nextIndex</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s1"> </span><span class="s13">prevSlide</span><span class="s1">() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s1">(</span><span class="s13">mediaFiles</span><span class="s1">.</span><span class="s13">length</span><span class="s1"> === </span><span class="s6">0</span><span class="s1">) </span><span class="s4">return</span><span class="s1">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">let</span><span class="s14"> </span><span class="s1">nextIndex</span><span class="s14"> = (</span><span class="s1">currentIndex</span><span class="s14"> - </span><span class="s6">1</span><span class="s14"> + </span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14">) % </span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">changeSlide</span><span class="s14">(</span><span class="s1">nextIndex</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">resetTimer</span><span class="s14">() {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">clearInterval</span><span class="s14">(</span><span class="s1">slideInterval</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">mediaFiles</span><span class="s14">.</span><span class="s1">length</span><span class="s14"> &gt; </span><span class="s6">1</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s1">slideInterval</span><span class="s14"> = </span><span class="s1">setInterval</span><span class="s14">(</span><span class="s1">nextSlide</span><span class="s14">, </span><span class="s12">SLIDE_DURATION</span><span class="s14">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">sliderContainer</span><span class="s14"> = </span><span class="s1">document</span><span class="s14">.</span><span class="s1">getElementById</span><span class="s14">(</span><span class="s7">'slider'</span><span class="s14">);</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">sliderContainer</span><span class="s14">.</span><span class="s1">addEventListener</span><span class="s14">(</span><span class="s7">'touchstart'</span><span class="s14">, </span><span class="s4">function</span><span class="s14">(</span><span class="s1">e</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">touchStartX</span><span class="s14"> = </span><span class="s1">e</span><span class="s14">.</span><span class="s1">changedTouches</span><span class="s14">[</span><span class="s6">0</span><span class="s14">].</span><span class="s1">screenX</span><span class="s14">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}, </span><span class="s4">false</span><span class="s1">);</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">sliderContainer</span><span class="s14">.</span><span class="s1">addEventListener</span><span class="s14">(</span><span class="s7">'touchend'</span><span class="s14">, </span><span class="s4">function</span><span class="s14">(</span><span class="s1">e</span><span class="s14">) {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">touchEndX</span><span class="s14"> = </span><span class="s1">e</span><span class="s14">.</span><span class="s1">changedTouches</span><span class="s14">[</span><span class="s6">0</span><span class="s14">].</span><span class="s1">screenX</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s1">handleSwipe</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}, </span><span class="s4">false</span><span class="s1">);</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s4">function</span><span class="s14"> </span><span class="s1">handleSwipe</span><span class="s14">() {</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">const</span><span class="s14"> </span><span class="s1">swipeThreshold</span><span class="s14"> = </span><span class="s6">50</span><span class="s14">;</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">touchStartX</span><span class="s14"> - </span><span class="s1">touchEndX</span><span class="s14"> &gt; </span><span class="s1">swipeThreshold</span><span class="s14">) </span><span class="s1">nextSlide</span><span class="s14">();</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">      </span></span><span class="s4">if</span><span class="s14"> (</span><span class="s1">touchEndX</span><span class="s14"> - </span><span class="s1">touchStartX</span><span class="s14"> &gt; </span><span class="s1">swipeThreshold</span><span class="s14">) </span><span class="s1">prevSlide</span><span class="s14">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p6"><span class="s11"></span><br></p>
-<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 啟動系統</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">fetchMedia</span><span class="s14">();</span></p>
-<p class="p10"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">setInterval</span><span class="s14">(</span><span class="s1">fetchMedia</span><span class="s14">, </span><span class="s6">15000</span><span class="s14">);<span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="glass-card">
+    <h2>✨ 精彩瞬間 即時共享 (GitHub 版)</h2>
+    <p class="subtitle">支援多檔案自動排隊上傳。<br>下方相框支援【手動點擊按鈕】或【手機左右滑動】切換！</p>
+    
+    <label class="upload-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      選擇照片 / 影片
+      <input type="file" id="fileInput" accept="image/*,video/*" multiple>
+    </label>
+
+    <div class="status-container" id="statusContainer">
+      <div id="status-text">準備上傳...</div>
+      <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-section" id="slider">
+    <div class="nav-btn prev-btn hidden" id="prevBtn" onclick="prevSlide()">❮</div>
+    <div class="nav-btn next-btn hidden" id="nextBtn" onclick="nextSlide()">❯</div>
+
+    <div class="no-media" id="noMediaHint">
+      <div class="spinner"></div>
+      <span>正在連線至雲端硬碟載入影像...</span>
+    </div>
+  </div>
+
+  <script>
+    // ⚠️ 請在此處貼上您重新部署後取得的 Google Apps Script 網頁應用程式 URL
+    const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbzUOYVyFkIGrR4dGN9tiG5Vh6pGqddHd2UZxgCZGgYsCJl-G0IzqA70rhs2AOVvjiyYBg/exec'; 
+
+    let uploadQueue = [];
+    let totalFiles = 0;
+    let uploadedCount = 0;
+
+    const fileInput = document.getElementById('fileInput');
+    const statusContainer = document.getElementById('statusContainer');
+    const statusText = document.getElementById('status-text');
+    const progressBar = document.getElementById('progressBar');
+
+    fileInput.addEventListener('change', function(e) {
+      const files = e.target.files;
+      if (files.length === 0) return;
+
+      totalFiles = files.length;
+      uploadedCount = 0;
+      uploadQueue = Array.from(files);
+      
+      statusContainer.style.display = 'block';
+      updateProgressUI(0, '佇列準備中...');
+      processUploadQueue();
+    });
+
+    function updateProgressUI(percent, message, color = '#f8fafc') {
+      progressBar.style.width = percent + '%';
+      statusText.innerText = message;
+      statusText.style.color = color;
+      
+      if (color === '#ef4444') {
+        progressBar.style.background = '#ef4444';
+        progressBar.style.boxShadow = '0 0 10px #ef4444';
+      } else if (color === '#10b981' || percent === 100) {
+        progressBar.style.background = '#10b981';
+        progressBar.style.boxShadow = '0 0 10px #10b981';
+      } else {
+        progressBar.style.background = 'var(--primary-color)';
+        progressBar.style.boxShadow = '0 0 10px var(--primary-color)';
+      }
+    }
+
+    // 使用標準 fetch 實作多檔案排隊上傳
+    function processUploadQueue() {
+      if (uploadQueue.length === 0) {
+        updateProgressUI(100, `🎉 完美！${totalFiles} 個檔案已全數上傳完畢。`, '#10b981');
+        fetchMedia(); 
+        fileInput.value = ''; 
+        setTimeout(() => { statusContainer.style.display = 'none'; }, 5000);
+        return;
+      }
+
+      const file = uploadQueue.shift(); 
+      const currentPercent = (uploadedCount / totalFiles) * 100;
+      
+      updateProgressUI(currentPercent, `⏳ 正在傳輸 (${uploadedCount + 1}/${totalFiles}):\n${file.name}`, '#38bdf8');
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const base64Data = event.target.result;
+        
+        // 發送給 GAS doPost 的資料包
+        const payload = {
+          action: 'upload',
+          base64Data: base64Data,
+          fileName: file.name,
+          mimeType: file.type
+        };
+
+        // 核心改變：使用 fetch 代替 google.script.run
+        // ⚠️ 注意：不設 Content-Type 標頭以避開 CORS OPTIONS 預檢限制
+        fetch(GAS_API_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(res => {
+          if(res.success) {
+            uploadedCount++;
+            const newPercent = (uploadedCount / totalFiles) * 100;
+            updateProgressUI(newPercent, `✅ ${file.name} 傳送成功！\n冷卻中...`, 'var(--primary-color)');
+            setTimeout(processUploadQueue, 3000); 
+          } else {
+            updateProgressUI(currentPercent, `⚠️ 伺服器忙碌 (${res.error})，重試中...`, '#ef4444');
+            uploadQueue.unshift(file);
+            setTimeout(processUploadQueue, 5000); 
+          }
+        })
+        .catch(err => {
+          updateProgressUI(currentPercent, `⚠️ 網路中斷或伺服器超載，重試中...`, '#ef4444');
+          uploadQueue.unshift(file);
+          setTimeout(processUploadQueue, 5000);
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // --- 輪播與手動切換邏輯 (改用 fetch 串接) ---
+    let mediaFiles = [];
+    let currentIndex = 0;
+    let slideInterval;
+    const SLIDE_DURATION = 6000;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function fetchMedia() {
+      const payload = { action: 'fetch' };
+
+      fetch(GAS_API_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      })
+      .then(response => response.json())
+      .then(res => {
+        if (res.success && res.data.length > 0) {
+          mediaFiles = res.data;
+          renderSlider();
+        } else if (res.success) {
+          document.getElementById('noMediaHint').innerHTML = '<span>尚無影像，快來上傳第一張照片吧！</span>';
+        }
+      })
+      .catch(err => {
+        console.error("無法載入雲端硬碟檔案列表:", err);
+      });
+    }
+
+    function renderSlider() {
+      const slider = document.getElementById('slider');
+      const hint = document.getElementById('noMediaHint');
+      if (hint) hint.style.display = 'none';
+
+      const currentItemsCount = slider.querySelectorAll('.slide-item').length;
+      if (currentItemsCount !== mediaFiles.length) {
+        const items = slider.querySelectorAll('.slide-item');
+        items.forEach(item => item.remove());
+        
+        mediaFiles.forEach((file, index) => {
+          let element;
+          if (file.mimeType.startsWith('image/')) {
+            element = document.createElement('img');
+            element.src = file.url;
+          } else if (file.mimeType.startsWith('video/')) {
+            element = document.createElement('video');
+            element.src = file.url;
+            element.controls = false;
+            element.muted = true; 
+            element.loop = true;
+          }
+          
+          element.className = 'slide-item';
+          if (index === currentIndex) element.classList.add('active');
+          slider.appendChild(element);
+        });
+      }
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      if (mediaFiles.length > 1) {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        resetTimer(); 
+      } else {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+      }
+    }
+
+    function changeSlide(nextIndex) {
+      const items = document.querySelectorAll('.slide-item');
+      if (items.length === 0) return;
+
+      items[currentIndex].classList.remove('active');
+      if (items[currentIndex].tagName === 'VIDEO') {
+        items[currentIndex].pause();
+      }
+
+      currentIndex = nextIndex;
+      items[currentIndex].classList.add('active');
+      if (items[currentIndex].tagName === 'VIDEO') {
+        items[currentIndex].play();
+      }
+      resetTimer();
+    }
+
+    function nextSlide() {
+      if(mediaFiles.length === 0) return;
+      let nextIndex = (currentIndex + 1) % mediaFiles.length;
+      changeSlide(nextIndex);
+    }
+
+    function prevSlide() {
+      if(mediaFiles.length === 0) return;
+      let nextIndex = (currentIndex - 1 + mediaFiles.length) % mediaFiles.length;
+      changeSlide(nextIndex);
+    }
+
+    function resetTimer() {
+      clearInterval(slideInterval);
+      if (mediaFiles.length > 1) {
+        slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+      }
+    }
+
+    const sliderContainer = document.getElementById('slider');
+    sliderContainer.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    sliderContainer.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) nextSlide();
+      if (touchEndX - touchStartX > swipeThreshold) prevSlide();
+    }
+
+    // 啟動系統
+    fetchMedia();
+    setInterval(fetchMedia, 15000); 
+  </script>
 </body>
 </html>
